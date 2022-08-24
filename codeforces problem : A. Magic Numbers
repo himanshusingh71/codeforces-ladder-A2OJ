@@ -1,0 +1,64 @@
+A. Magic Numbers
+
+
+ 
+import java.util.*;
+import java.lang.*;
+
+ public class c{
+
+static void print(String s)
+{
+    System.out.print(s);
+}
+public static void main(String[] args)
+{
+    Scanner sc = new Scanner(System.in);
+
+    String s;
+
+    s = sc.next();
+
+    int i=0;
+
+    while(i<s.length())
+    {
+        if(s.charAt(i) == '1')
+        {
+            if(i+1 == s.length())
+            {
+                System.out.println("YES");
+                return;
+            }
+            else if(s.charAt(i+1) == '1')
+                i++;
+            else if(s.charAt(i+1) == '4')
+            {
+                 if(i+2 == s.length())
+                 {
+                    System.out.println("YES");
+                    return;
+                 }
+                 else if(s.charAt(i+2) == '4')
+                 {
+                    i+=3;
+                 }
+                 else{
+                    i+=2;
+                 }
+            }
+            else 
+                i++;
+
+
+        }
+        else{
+            System.out.println("NO");
+            return;
+        }
+    }
+    System.out.println("YES\n");
+	 
+}
+
+}
