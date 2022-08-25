@@ -1,0 +1,65 @@
+B. T-primes
+
+#include<bits/stdc++.h>
+
+using namespace std;
+ 
+
+bool prime(long long sss)
+{
+	if(sss==2) return true;
+	for(int i=2;i*i<=sss;i++)
+	{
+		if(sss%i==0) return false;
+	}
+
+		int temp = sqrt(sss);
+
+		if(temp*temp==sss) return false;
+		return true;
+
+    
+}
+int main(){
+
+	   
+ 	 int tt;
+ 	 cin >> tt;
+ 	 for(int i=0;i<tt;i++)
+ 	 {
+ 	 	long long t;
+ 	 	cin >> t;
+        
+    	 long long sss = sqrt(t);
+        if(prime(sss) and (sss*sss==t) )
+        {
+        	cout << "YES\n";
+
+        }
+        else{
+        	cout << "NO\n";
+        }
+
+
+ 	 }
+ 	 
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
