@@ -1,0 +1,70 @@
+A. Cinema Line
+
+
+ 
+import java.util.*;
+import java.lang.*;
+
+ public class c{
+ 
+public static void main(String[] args)
+{
+     
+     Scanner sc = new Scanner(System.in);
+
+     int n = sc.nextInt();
+
+     int tf = 0 , ft = 0 , hd = 0 ;
+
+    for(int x=0;x<n;x++)
+     {
+        int temp = sc.nextInt() ;
+
+         
+
+        if(temp == 25)
+            tf++;
+        else {
+
+            if( temp == 50 )
+            {
+                if(tf>0)
+                {
+                    tf--;
+                    ft++;
+                }
+                else{
+                  System.out.println("NO");
+                    return ;
+                }    
+            }
+            else if(temp == 100)
+            {
+                if(tf>=1 && ft >=1)
+                {
+                    tf--;
+                    ft--;
+
+                }
+                else if(tf>=3)
+                {
+                    tf-=3;
+                }
+                else{
+                    System.out.println("NO");
+                    return;
+                }
+            }
+        }
+
+        
+
+
+     }
+     System.out.println("YES");
+
+}
+}
+
+
+ 
