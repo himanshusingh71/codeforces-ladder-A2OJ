@@ -1,0 +1,61 @@
+C. Building Permutation
+
+
+ 
+import java.util.*;
+import java.lang.*;
+
+ public class c     
+ {
+
+public static void main(String[] args)
+{
+     ArrayList<Long> arr = new ArrayList<Long>();
+
+     Scanner sc = new Scanner(System.in);
+
+     Integer  n = sc.nextInt();
+
+
+     for(int i=0;i<n;i++)
+     {
+        Long temp = sc.nextLong();
+
+        arr.add(temp);
+
+     }
+
+     Collections.sort(arr);
+ 
+ Long make = 1L;
+ Long ans = 0L;
+
+    for(Long x : arr)
+    {
+        if(x==make){
+            make++;
+            continue;
+        }
+        if(x<0)
+        {
+            // x is less than 0 
+            ans = ans + Math.abs(x) + make;
+
+        }
+        else if(x==0)
+        {
+            // x is 0
+            ans = ans + make;
+        }
+        else{
+            // x is greater than 0 
+            ans = ans +  Math.abs(x - make);
+        }
+        make++;
+    }
+    System.out.println(ans);
+}
+}
+
+
+ 
