@@ -1,0 +1,63 @@
+B. Easy Number Challenge
+
+ 
+import java.util.*;
+import java.lang.*;
+
+ public class c     
+ {
+static HashMap<Integer,Integer> hm = new HashMap<Integer,Integer>();
+static Integer div(Integer x)
+{
+    if(hm.containsKey(x))
+    {
+        return hm.get(x);
+    }
+    Integer ans = 0;
+
+    for(int i=1;i*i<x;i++)
+    {
+        if(x%i==0)
+            ans+=2;
+
+    }
+
+    int item = (int)Math.sqrt(x);
+    if(item*item==x)
+    {
+        hm.put(x,ans+1);
+        return ans+1;
+    }
+    hm.put(x,ans);
+    return ans;
+}
+public static void main(String[] args)
+{
+     ArrayList<Integer> arr = new ArrayList<Integer>();
+
+     Integer a,b,c;
+
+     Long mod = 1073741824L;
+     Long sum = 0L;
+     Scanner sc = new Scanner(System.in);
+
+     a = sc.nextInt();
+     b = sc.nextInt();
+     c = sc.nextInt();
+
+     for(int i=1;i<=a;i++)
+     {
+        for(int j=1;j<=b;j++)
+        {
+            for(int z=1;z<=c;z++)
+            {
+                sum = (( sum % mod) + ( div(i*j*z) % mod)) % mod;
+            }
+        }
+     }
+     System.out.println(sum);
+}
+}
+
+
+ 
