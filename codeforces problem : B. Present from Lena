@@ -1,0 +1,85 @@
+B. Present from Lena
+
+
+
+
+ 
+import java.util.*;
+import java.lang.*;
+
+ public class c     
+ {
+
+public static void main(String[] args)
+{
+     Scanner sc = new Scanner(System.in);
+
+     Integer n = sc.nextInt();
+
+     int rowise = n;
+     int move=2;
+     for(int i=0;i<n;i++)
+        System.out.print("  ");
+
+     System.out.println("0");
+     
+ 
+     for(int i=0;i<n;i++)
+     {
+        for(int j=0;j<rowise-1;j++)
+        {
+            System.out.print("  ");
+        }
+         
+          for(int j=0;j<move/2;j++)
+     {
+        System.out.print(j + " ");
+     }
+
+     for(int j=move/2;j>=0;j--)
+     {
+        if(j!=0)
+         System.out.print(j + " ");
+     else 
+        System.out.println(j);
+     }
+      
+
+     move+=2;
+     rowise--;
+        
+       
+
+     }
+
+      move-=4;
+     rowise+=2;  
+for(int i=0;i<n;i++)
+     {
+        for(int j=0;j<rowise-1;j++)
+        {
+            System.out.print("  ");
+        }
+         
+          for(int j=0;j<move/2;j++)
+     {
+        System.out.print(j + " ");
+     }
+
+     for(int j=move/2;j>=0;j--)
+     {
+             if(j!=0)
+         System.out.print(j + " ");
+     else 
+        System.out.println(j);
+     }
+
+     move-=2;
+     rowise++;
+       }
+
+}
+}
+
+
+ 
