@@ -1,0 +1,79 @@
+A. Cut Ribbon
+
+
+
+ 
+import java.util.*;
+import java.lang.*;
+
+ public class c     
+ {
+
+public static void main(String[] args)
+{
+     Integer n,a,b,c;
+
+     Scanner sc = new Scanner(System.in);
+
+     n = sc.nextInt();
+     a = sc.nextInt();
+
+     b=sc.nextInt();
+     c=sc.nextInt();
+     Integer ans = 0;
+     for(Integer i =  0 ;i<=n;i++)
+     {
+        for(Integer j=0;j<=n;j++)
+        {
+            int mid = n - a*i - b*j 
+import java.util.*;
+import java.lang.*;
+
+ public class c     
+ {
+
+public static void main(String[] args)
+{
+     Integer n,a,b,c;
+
+     Scanner sc = new Scanner(System.in);
+
+     n = sc.nextInt();
+     a = sc.nextInt();
+
+     b=sc.nextInt();
+     c=sc.nextInt();
+     Integer ans = 0;
+     for(Integer i =  0 ;i<=n;i++)
+     {
+        for(Integer j=0;j<=n;j++)
+        {
+            int mid = n - a*i - b*j;
+
+            if(mid>=0 && mid%c==0)
+            {
+                ans = Math.max(ans,i+j+mid/c);
+            }
+        }
+     }
+
+     System.out.println(ans);
+}
+}
+
+
+ ;
+
+            if(mid>=0 && mid%c==0)
+            {
+                ans = Math.max(ans,i+j+mid/c);
+            }
+        }
+     }
+
+     System.out.println(ans);
+}
+}
+
+
+ 
