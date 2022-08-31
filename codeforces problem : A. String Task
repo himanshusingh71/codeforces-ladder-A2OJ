@@ -1,0 +1,41 @@
+A. String Task
+
+
+
+ 
+import java.util.*;
+import java.lang.*;
+
+ public class c     
+ {
+
+public static void main(String[] args)
+{
+     Scanner sc = new Scanner(System.in);
+
+     String s;
+     s = sc.nextLine();
+    String ans = "";
+
+    for(int i=0;i<s.length();i++)
+    {
+        Character x = s.charAt(i);
+        if(x>='A' && x<='Z')
+        {
+            x = Character.toLowerCase(x);  
+                        if(x!='a' && x!='e' && x!= 'i' && x!='o' && x!='u' && x!='y')
+            ans = ans + "." + x;
+        }
+        else if(x>='a' && x<='z' )
+        {
+            if(x!='a' && x!='e' && x!= 'i' && x!='o' && x!='u' && x!='y')
+            ans = ans + "." + x;
+        }
+    }
+    System.out.println(ans);
+
+}
+}
+
+
+ 
