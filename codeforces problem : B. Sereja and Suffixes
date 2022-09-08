@@ -1,0 +1,72 @@
+B. Sereja and Suffixes
+
+
+import java.util.*;
+import java.lang.*;
+
+public class code{
+	public static void main(String[] args)
+	{
+		Scanner sc  =  new Scanner(System.in);
+
+		int n,m;
+		ArrayList<Integer> input,query;
+		HashMap<Integer,Integer> mp , output;
+		input = new ArrayList<Integer>();
+		query = new ArrayList<Integer>();
+		mp = new HashMap<Integer,Integer>();
+		n = sc.nextInt();
+		m = sc.nextInt();
+		int unique = 0;
+		for(int i=0;i<n;i++)
+		{
+			int temp = sc.nextInt();
+			input.add(temp);
+			if(!mp.containsKey(temp)){
+				unique++;
+				mp.put(temp,1);
+			}
+			else
+			mp.put(temp,mp.get(temp)+1);
+
+		}
+
+		for(int i=0;i<m;i++)
+		{
+			int temp = sc.nextInt();
+			query.add(temp);
+		}
+		output = new HashMap<Integer,Integer>();
+		ArrayList<Integer> copy = new ArrayList<Integer>();
+		 for(int i=0;i<query.size();i++)
+		 {
+		 	copy.add(query.get(i));
+		 }
+		Collections.sort(query);
+		int index = 0;
+		for(int i=0;i<query.size();i++)
+		{
+			while(index+1!=query.get(i))
+			{
+				if(mp.get(input.get(index))==1)
+				{
+					unique--;
+					mp.put(input.get(index),0) ;
+				}
+				else if(mp.get(input.get(index))>1)
+				{
+					
+					mp.put(input.get(index), mp.get(input.get(index))-1 );
+				}
+				index++;
+			}
+			output.put(query.get(i),unique);
+		}
+
+		for(int i=0;i<copy.size();i++)
+		{
+			System.out.println(output.get(copy.get(i)));
+		}
+
+	}
+}
