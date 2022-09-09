@@ -1,0 +1,80 @@
+B. Jzzhu and Sequences
+
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+long long ABSOLUTE(long long x)
+{
+	if(x<0)
+		return -1*x;
+	return x;
+}
+int main(){
+ 
+  
+   long long f1,f2,f3,n;
+  	
+  	long long MOD = 1000000007;
+
+ 
+   cin >> f1 >> f2 >> n;
+  if(f1==0 and f2==0)
+  {
+  	cout << 0 << endl;
+  	return 0;
+  }
+   int arr[7];
+
+   if(n<=2)
+   {
+   	 if(n==1)
+   	 {
+   	 	if(f1>0)
+   	 		cout << f1%MOD << endl;
+   	 	else
+   	 		cout << MOD - abs(f1) << endl;
+   	 }
+   	 else{
+   	 	if(f2>0)
+   	 		cout << f2%MOD << endl;
+   	 	else
+   	 		cout << MOD  - abs(f2) << endl;
+
+   	 }
+   }
+   else{
+
+   long long f3,f4,f5,f6;
+
+   f3 = f2 - f1;
+   f4 = f3 - f2;
+   f5 = f4 - f3;
+   f6 = f5 - f4;
+
+   
+   arr[0] = f1;
+   arr[1] = f2;
+   arr[2] = f3;
+   arr[3] = f4;
+   arr[4] = f5;
+   arr[5] = f6;
+
+   long long ans = arr[(n-1)%6];
+   if(ans >0)
+   	cout << ans % MOD << endl;
+   else{
+ 
+   	while( MOD - ABSOLUTE(ans) <0){
+   		ans = MOD - ABSOLUTE(ans);
+   	}
+   	cout << MOD - ABSOLUTE(ans) << endl;
+   }
+   }
+
+     
+
+
+	return 0 ;
+}
