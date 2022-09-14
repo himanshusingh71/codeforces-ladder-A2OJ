@@ -1,0 +1,41 @@
+B. Sale
+
+
+import java.util.*;
+import java.lang.*;
+
+public class code{
+	public static void main(String[] args)
+	{
+		Scanner sc  =  new Scanner(System.in);
+         
+       int n,m;
+
+       n = sc.nextInt();
+       m = sc.nextInt();
+
+       ArrayList<Integer> arr = new ArrayList<Integer>();
+
+       for(int i=0;i<n;i++)
+       {
+        int temp = sc.nextInt();
+        if(temp<0)
+        arr.add(-temp);
+       }
+
+       Collections.sort(arr);
+
+       int profit = 0;
+
+       int i = arr.size()-1 ;
+
+       while(m>0 && i>=0)
+       {
+         profit+=arr.get(i);
+         i--;
+         m--;
+       }
+       System.out.println(profit);
+
+	}
+}
