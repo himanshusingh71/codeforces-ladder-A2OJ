@@ -1,0 +1,32 @@
+A. Chat room
+
+
+import java.util.*;
+import java.lang.*;
+
+public class code{
+	public static void main(String[] args)
+	{
+		Scanner sc  =  new Scanner(System.in);
+         
+       String s = sc.nextLine();
+       String hello = "hello";
+
+       int i=0,j=0;
+
+       while(i<s.length()){
+       	if(s.charAt(i)==hello.charAt(j))
+       	{
+       		j++;
+       	}
+       	i++;
+       	if(j==5)
+       	{
+       		System.out.println("YES");
+       		return;
+       	}
+       }
+       System.out.println("NO");
+
+	}
+}
