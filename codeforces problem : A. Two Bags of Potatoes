@@ -1,0 +1,36 @@
+A. Two Bags of Potatoes
+
+
+import java.util.*;
+import java.lang.*;
+
+public class code{
+	public static void main(String[] args)
+	{
+		Scanner sc  =  new Scanner(System.in);
+         
+          long y ,n ,k;
+
+         y = sc.nextLong();
+         k = sc.nextLong();
+         n = sc.nextLong();
+
+     
+
+          long start = y + k - y%k;
+
+         if(start>n)
+         {
+         	System.out.println(-1);
+         	return ;
+         }
+
+         while(start<=n)
+         {
+         	
+         	System.out.print(start-y + " ");
+         	start+=k;
+         }
+
+	}
+}
